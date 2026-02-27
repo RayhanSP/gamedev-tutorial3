@@ -2,20 +2,39 @@
 
 [ext_resource type="Script" uid="uid://ccnt6deyykprd" path="res://scenes/Player.gd" id="1_rpfd1"]
 [ext_resource type="Texture2D" uid="uid://cbbxyh5h1jc2k" path="res://assets/kenney_platformercharacters/PNG/Zombie/Poses/zombie_cheer1.png" id="2_6eyey"]
+[ext_resource type="Texture2D" uid="uid://dgvfedh1teejy" path="res://assets/kenney_platformercharacters/PNG/Zombie/Poses/zombie_duck.png" id="2_lkdrv"]
 [ext_resource type="Texture2D" uid="uid://j2wrs40clo4m" path="res://assets/kenney_platformercharacters/PNG/Zombie/Poses/zombie_idle.png" id="2_rpfd1"]
 [ext_resource type="Texture2D" uid="uid://bp846fbautxqg" path="res://assets/kenney_platformercharacters/PNG/Zombie/Poses/zombie_cheer2.png" id="3_d3wef"]
 [ext_resource type="Texture2D" uid="uid://dv1reihmdtpyu" path="res://assets/kenney_platformercharacters/PNG/Zombie/Poses/zombie_action1.png" id="3_hn4bp"]
+[ext_resource type="Texture2D" uid="uid://kq0oecj1vdoi" path="res://assets/kenney_platformercharacters/PNG/Zombie/Poses/zombie_skid.png" id="3_p7iby"]
 [ext_resource type="Texture2D" uid="uid://vbe0mk82vmx3" path="res://assets/kenney_platformercharacters/PNG/Zombie/Poses/zombie_action2.png" id="4_xoraj"]
 [ext_resource type="Texture2D" uid="uid://bpc6e5ojqehlc" path="res://assets/kenney_platformercharacters/PNG/Zombie/Poses/zombie_stand.png" id="5_5sxf6"]
 [ext_resource type="Texture2D" uid="uid://c6ab5usovtwvg" path="res://assets/kenney_platformercharacters/PNG/Zombie/Poses/zombie_jump.png" id="6_n6lo7"]
 [ext_resource type="Texture2D" uid="uid://bvrk5ia7qa012" path="res://assets/kenney_platformercharacters/PNG/Zombie/Poses/zombie_walk1.png" id="7_ph1en"]
 [ext_resource type="Texture2D" uid="uid://jnt42t5uwigs" path="res://assets/kenney_platformercharacters/PNG/Zombie/Poses/zombie_walk2.png" id="8_sbp8u"]
+[ext_resource type="Texture2D" uid="uid://ohvwpuw2ifow" path="res://assets/kenney_platformercharacters/PNG/Zombie/Poses/zombie_slide.png" id="13_0rnld"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
 size = Vector2(61, 90)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hqwri"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lkdrv")
+}],
+"loop": true,
+"name": &"crouch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_p7iby")
+}],
+"loop": true,
+"name": &"dash",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_6eyey")
@@ -28,13 +47,13 @@ animations = [{
 "speed": 5.0
 }, {
 "frames": [{
-"duration": 1.0,
+"duration": 5.0,
 "texture": ExtResource("2_rpfd1")
 }, {
-"duration": 1.0,
+"duration": 0.4,
 "texture": ExtResource("3_hn4bp")
 }, {
-"duration": 1.0,
+"duration": 0.6,
 "texture": ExtResource("4_xoraj")
 }, {
 "duration": 1.0,
@@ -62,6 +81,14 @@ animations = [{
 "loop": true,
 "name": &"run",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_0rnld")
+}],
+"loop": true,
+"name": &"slide",
+"speed": 5.0
 }]
 
 [node name="Player" type="CharacterBody2D" unique_id=1054702329]
@@ -73,4 +100,4 @@ shape = SubResource("RectangleShape2D_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=427674939]
 sprite_frames = SubResource("SpriteFrames_hqwri")
-animation = &"doublejump"
+animation = &"slide"
