@@ -27,3 +27,18 @@ Saya mengimplementasikan dash sekali tekan menggunakan tombol Shift.
 Saya menggunakan variabel boolean is_dashing dan timer dash_timer. Saat trigger, kecepatan horizontal karakter dikalikan dengan kecepatan tinggi (dash_speed) sesuai dengan arah hadap Sprite saat itu (flip_h). Kecepatan vertikal (velocity.y) di-set menjadi 0 agar efek gravitasi diabaikan sementara, sehingga karakter bisa melakukan air-dash lurus. Logika timer akan menghitung mundur menggunakan delta hingga durasi dash habis.
 
 Animasinya, agar bervariasi, saat dash tereksekusi, script akan menggunakan fungsi pick_random() dari sebuah Array string untuk memilih secara acak antara memutar animasi dash atau slide.
+
+---
+
+### Referensi
+Godot Engine Documentation: AnimatedSprite2D Class
+    Referensi pengelolaan *state* animasi, manipulasi properti `flip_h` untuk membalikkan *sprite* sesuai arah gerak, serta penggunaan fungsi `play()`.
+   [https://docs.godotengine.org/en/stable/classes/class_animatedsprite2d.html](https://docs.godotengine.org/en/stable/classes/class_animatedsprite2d.html)
+   
+Godot Engine Documentation: InputEvent and InputMap
+   Panduan untuk mengelola *custom action* pada Input Map (seperti penambahan aksi `dash` dan `crouch`).
+   [https://docs.godotengine.org/en/stable/tutorials/inputs/inputevent.html](https://docs.godotengine.org/en/stable/tutorials/inputs/inputevent.html)
+
+Godot Engine Documentation: Array Class
+   Referensi untuk logika variasi animasi dinamis menggunakan *method* `pick_random()` dari tipe data Array bawaan GDScript.
+   [https://docs.godotengine.org/en/stable/classes/class_array.html#class-array-method-pick-random](https://docs.godotengine.org/en/stable/classes/class_array.html#class-array-method-pick-random)
