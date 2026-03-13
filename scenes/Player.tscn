@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bvrk5ia7qa012" path="res://assets/kenney_platformercharacters/PNG/Zombie/Poses/zombie_walk1.png" id="7_ph1en"]
 [ext_resource type="Texture2D" uid="uid://jnt42t5uwigs" path="res://assets/kenney_platformercharacters/PNG/Zombie/Poses/zombie_walk2.png" id="8_sbp8u"]
 [ext_resource type="Texture2D" uid="uid://ohvwpuw2ifow" path="res://assets/kenney_platformercharacters/PNG/Zombie/Poses/zombie_slide.png" id="13_0rnld"]
+[ext_resource type="AudioStream" uid="uid://d3o047pjtlcjm" path="res://assets/sounds/dragon-studio-cartoon-jump-463196.mp3" id="14_p7iby"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g2els"]
 size = Vector2(61, 90)
@@ -101,3 +102,6 @@ shape = SubResource("RectangleShape2D_g2els")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=427674939]
 sprite_frames = SubResource("SpriteFrames_hqwri")
 animation = &"slide"
+
+[node name="JumpSFX" type="AudioStreamPlayer" parent="." unique_id=605222569]
+stream = ExtResource("14_p7iby")

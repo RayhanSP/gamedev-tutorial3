@@ -42,6 +42,7 @@ func _physics_process(delta):
 		if is_on_floor() or jump_count < max_jumps:
 			velocity.y = jump_speed
 			jump_count += 1
+			$JumpSFX.play()
 
 	if not is_dashing:
 		if Input.is_action_pressed("crouch") and is_on_floor():
@@ -61,8 +62,10 @@ func _physics_process(delta):
 	elif not is_on_floor():
 		if jump_count == 2:
 			anim.play("doublejump")
+
 		else:
-			anim.play("jump") 
+			anim.play("jump")
+	
 	elif Input.is_action_pressed("crouch"):
 		anim.play("crouch")
 	elif velocity.x != 0:

@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://ds60n6krsavle" path="res://scenes/Ground.tscn" id="1_elqb8"]
 [ext_resource type="PackedScene" uid="uid://dvlyhuf4uyjqv" path="res://scenes/Player.tscn" id="2_rvslj"]
+[ext_resource type="AudioStream" uid="uid://b7n3moj0gdvk8" path="res://assets/sounds/mfcc-retro-arcade-game-music-297305.mp3" id="3_0bbpv"]
+[ext_resource type="PackedScene" uid="uid://c54jptd3wa5mu" path="res://scenes/collectible.tscn" id="4_rarhs"]
 
 [node name="Root" type="Node2D" unique_id=918599496]
 
@@ -16,3 +18,11 @@ position = Vector2(576, 394)
 
 [node name="Player" parent="." unique_id=1054702329 instance=ExtResource("2_rvslj")]
 position = Vector2(209, 231)
+
+[node name="BGM" type="AudioStreamPlayer" parent="." unique_id=1159125062]
+stream = ExtResource("3_0bbpv")
+volume_db = 7.754
+autoplay = true
+
+[node name="Collectible" parent="." unique_id=1815180248 instance=ExtResource("4_rarhs")]
+position = Vector2(744, 238)
